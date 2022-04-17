@@ -36,6 +36,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 - [Authentication Tools](#authentication-tools)
 - [Useful GnuPG Commands](#useful-gnupg-commands)
 - [Setup](#setup)
+- [Key Management](#advanced-key-management)
 - [Multiple Keys](#multiple-keys)
 - [Keybase Usage](#keybase-usage)
 
@@ -301,6 +302,25 @@ Please find details at https://github.com/TechProber/cloud-estate/discussions/10
 
 ---
 
+## Advanced Key Management
+
+### Add new uid (user id) to an existing key-pair
+
+Reference: https://gist.github.com/lovejavaee/4b870ad7fbc735df5245bf996bbd9c11
+
+To add another identity to the exisitng key-pair (use email as identity)
+
+```bash
+gpg --edit-key <key id>
+gpg> adduid
+gpg> uid <new uid number>
+gpg> trust
+gpg> 5
+gpg> save
+```
+
+---
+
 ## Multiple Keys
 
 Reference: https://github.com/drduh/YubiKey-Guide#multiple-yubikeys
@@ -438,6 +458,12 @@ keybase pgp export > <dir>
 
 # export private key
 keybase pgp export --secret > <dir>
+```
+
+### Update Key-Pair to Keybase
+
+```bash
+keybase pgp update
 ```
 
 ---
