@@ -11,6 +11,9 @@
     <a href="https://img.shields.io/tokei/lines/github/TechProber/yubikey-reference?color=orange">
       <img src="https://img.shields.io/tokei/lines/github/TechProber/yubikey-reference?color=orange" alt="lines">
     </a>
+    <a href="">
+        <img src="https://img.shields.io/badge/yubikey--firmware-v5.4.3-brightgreen" alt="Firmware Version">
+    </a>
 </p>
 
 ## Introduction
@@ -73,7 +76,7 @@ ykman info
 
 ### Authentication Tools
 
-####  Yubico PAM
+#### Yubico PAM
 
 PAM user authentication with either Yubico OTP or challenge-response
 
@@ -186,7 +189,7 @@ Guide: https://support.yubico.com/hc/en-us/articles/360013790259-Using-Your-Yubi
 
 Notes: steps including import the GPG private key to your YubiKey
 
-You should have a similar output as the following 
+You should have a similar output as the following
 
 <details><summary>card-info</summary>
   
@@ -238,7 +241,7 @@ echo test | gpg --encrypt --recipient <your login email> | gpg --decrypt
 
 ### Step [2] - SSH Configuration
 
-References: 
+References:
 
 - https://github.com/drduh/YubiKey-Guide
 - https://www.linode.com/docs/guides/gpg-key-for-ssh-authentication/
@@ -323,14 +326,13 @@ Reference: https://github.com/drduh/YubiKey-Guide#switching-between-two-or-more-
 gpg-connect-agent "scd serialno" "learn --force" /bye
 ```
 
-Notes: 
+Notes:
 
 - GPG will then scan your first Yubikey for GPG keys and recreate the stubs to point to the GPG keyID and Yubikey Serial number of this first Yubikey
 - To return to using the second Yubikey just repeat (insert other Yubikey and re-run command).
 - Obviously this command is not easy to remember so it is recommended to either create a script or a shell alias to make this more user friendly.
 
 #### Step [2] - Delete the original key
-
 
 Delete the original master key
 
@@ -396,7 +398,6 @@ ssh-add -L
 
 ## Keybase Usage
 
-
 ### Install Keybase CLI
 
 ```bash
@@ -438,4 +439,3 @@ keybase pgp export --secret > <dir>
 ```
 
 ---
-
