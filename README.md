@@ -256,7 +256,6 @@ cat <<EOF >> ~/.gnupg/gpg-agent.conf
 enable-ssh-support
 default-cache-ttl 60
 max-cache-ttl 120
-gpg-connect-agent reloadagent /bye
 pinentry-program /usr/bin/pinentry-curses
 EOF
 ```
