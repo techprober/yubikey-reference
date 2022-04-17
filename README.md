@@ -13,7 +13,7 @@
     <a href="https://img.shields.io/tokei/lines/github/TechProber/yubikey-reference?color=orange">
       <img src="https://img.shields.io/tokei/lines/github/TechProber/yubikey-reference?color=orange" alt="lines">
     </a>
-    <a href="">
+    <a href="https://www.yubico.com/blog/yubikey-firmware-update-yubikey-5-series-with-firmware-5-4/">
         <img src="https://img.shields.io/badge/yubikey--firmware-v5.4.3-brightgreen" alt="Firmware Version">
     </a>
 </p>
