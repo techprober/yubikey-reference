@@ -273,6 +273,7 @@ I am using fish, so adding the following lines to `~/.config/fish/config.fish` s
 set -e SSH_AUTH_SOCK
 set -U -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 set -x GPG_TTY (tty)
+gpg-connect-agent reloadagent /bye
 gpgconf --launch gpg-agent
 ```
 
