@@ -36,7 +36,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 - [Authentication Tools](#authentication-tools)
 - [Useful GnuPG Commands](#useful-gnupg-commands)
 - [Setup](#setup)
-- [Key Management](#advanced-key-management)
+- [Advanced Key Management](#advanced-key-management)
 - [Multiple Keys](#multiple-keys)
 - [Keybase Usage](#keybase-usage)
 
@@ -50,6 +50,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 - [Yubico Authenticator](https://www.yubico.com/products/yubico-authenticator/)
 - [How To: Programming the YubiKey with a YubiOTP Credential](https://www.youtube.com/watch?v=nSDSqJiwono)
 - [Yubico OTP key upload](https://upload.yubico.com/)
+- [How to export and import keys with GPG](https://linuxhint.com/export-import-keys-with-gpg/)
 
 ---
 
@@ -138,6 +139,12 @@ gpg --export-secret-key --armor <key id> > <dir to save the key>
 gpg --edit-card
 gpg/card> fetch
 gpg -K
+
+# list all public keys
+gpg --list-secret-keys
+
+# list all private keys
+gpg --list-private-keys
 ```
 
 ---
@@ -317,6 +324,30 @@ gpg> uid <new uid number>
 gpg> trust
 gpg> 5
 gpg> save
+```
+
+### How to export and import keys with GPG
+
+Reference: https://linuxhint.com/export-import-keys-with-gpg/
+
+```bash
+# list all key-pairs
+gpg -k
+
+# export public key with GPG
+gpg --export --armor <key id> > gpg.pub
+cat gpg.pub
+
+# export private key with GPG
+gpg --export-secret-key --armor <key id> > gpg.key
+cat gpg.key
+
+# import keys (works for both public and private keys) from local storage
+gpg --import <key location>
+
+# verify results
+gpg --list-secret-keys
+gpg --list-private-keys
 ```
 
 ---
