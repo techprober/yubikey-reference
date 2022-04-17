@@ -41,7 +41,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 - [Keybase Usage](#keybase-usage)
 - [Git Signing Usage](#git-signing-usage)
 
-### References
+## References
 
 - [YubiKey Archlinux Wiki](https://wiki.archlinux.org/title/YubiKey)
 - [YubiKey-Guide](https://github.com/drduh/YubiKey-Guide)
