@@ -39,6 +39,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 - [Advanced Key Management](#advanced-key-management)
 - [Multiple Keys](#multiple-keys)
 - [Keybase Usage](#keybase-usage)
+- [Git Signing Usage](#git-signing-usage)
 
 ### References
 
@@ -498,6 +499,28 @@ keybase pgp export --secret > <dir>
 
 ```bash
 keybase pgp update
+```
+
+---
+
+### Git Signing Usage
+
+Reference: https://gist.github.com/alopresto/b8d940197b4c314e27188a6852198d2d
+
+Upload your key to Github followed by the [guide](https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/)
+
+```bash
+# enable signing for every git commit (optional)
+git config --global commit.gpgsign true
+
+# reference the keyid that is used for signing
+git config --global user.signingkey <keyid>
+
+# test result
+echo "hello" > test
+git add test
+git commit -S "this commit is signed by a GPG key"
+git logs
 ```
 
 ---
