@@ -335,11 +335,13 @@ Reference: https://linuxhint.com/export-import-keys-with-gpg/
 gpg -k
 
 # export public key with GPG
-gpg --export --armor <key id> > gpg.pub
+gpg --export --armor <key id> > gpg.pub # keyid based
+gpg --export --armor <uid (email)> > gpg.pub # uid based
 cat gpg.pub
 
 # export private key with GPG
-gpg --export-secret-key --armor <key id> > gpg.key
+gpg --export-secret-key --armor <key id> > gpg.key # keyid based
+gpg --export-secret-key --armor <uid (email)> > gpg.key # uid based
 cat gpg.key
 
 # import keys (works for both public and private keys) from local storage
