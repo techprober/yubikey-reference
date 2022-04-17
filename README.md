@@ -1,6 +1,6 @@
 <h1 align="center">🔐 YubiKey Reference</h1>
 <p align="center">
-    <em>The Ultimate Guide to Use YubiKey for GPG and SSH</em>
+    <em>The Ultimate Guide to Using YubiKey for GPG and SSH</em>
 </p>
 
 <p align="center">
