@@ -11,15 +11,6 @@
     <a href="https://img.shields.io/tokei/lines/github/TechProber/yubikey-reference?color=orange">
       <img src="https://img.shields.io/tokei/lines/github/TechProber/yubikey-reference?color=orange" alt="lines">
     </a>
-    <a href="https://hub.docker.com/repository/docker/hikariai/">
-        <img src="https://img.shields.io/badge/docker-v20.10.7-blue" alt="Version">
-    </a>
-    <a href="https://kubernetes.io/">
-        <img src="https://img.shields.io/badge/kubernetes-v1.22-navy.svg" alt="Kubernetes"/>
-    </a>
-    <a href="https://github.com/TechProber/yubikey-reference">
-        <img src="https://img.shields.io/github/last-commit/TechProber/yubikey-reference" alt="lastcommit"/>
-    </a>
 </p>
 
 ## Introduction
