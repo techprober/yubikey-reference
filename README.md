@@ -51,6 +51,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 - [How To: Programming the YubiKey with a YubiOTP Credential](https://www.youtube.com/watch?v=nSDSqJiwono)
 - [Yubico OTP key upload](https://upload.yubico.com/)
 - [How to export and import keys with GPG](https://linuxhint.com/export-import-keys-with-gpg/)
+- [GPG: Change email for key in PGP key servers](https://gist.github.com/lovejavaee/4b870ad7fbc735df5245bf996bbd9c11)
 
 ---
 
