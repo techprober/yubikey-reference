@@ -33,6 +33,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 - [Home Page](https://github.com/TechProber/yubikey-reference)
 - [Add new uid (user id) to and existing key-pair](#add-new-uid-user-id-to-an-existing-key-pair)
 - [Export and import keys with GPG](#export-and-import-keys-with-gpg)
+- [GPG pull public key from keyserver](#gpg-pull-public-key-from-keyserver)
 - [Export GPG public key to keyserver](#export-gpg-public-key-to-keyserver)
 
 ## Advanced Key Management
@@ -78,6 +79,16 @@ gpg --import <key location>
 # verify results
 gpg --list-secret-keys
 gpg --list-private-keys
+```
+
+---
+
+### GPG pull public key from keyserver
+
+Notes: the wfollowing command will pull the target public key (including fingerprint) from keyserver
+
+```bash
+gpg --rec-keys <key id>
 ```
 
 ---
