@@ -30,16 +30,15 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 
 ## Table of Contents
 
+- [Home Page](https://github.com/TechProber/yubikey-reference)
 - [Reference](#reference)
-- [Dependencies](#dependencies)
-- [Management Tools](#management-tools)
-- [Authentication Tools](#authentication-tools)
-- [Useful GnuPG Commands](#useful-gnupg-commands)
-- [Setup](#setup)
-- [Advanced Key Management](#advanced-key-management)
-- [Multiple Keys](#multiple-keys)
-- [Keybase Usage](#keybase-usage)
-- [Git Signing Usage](#git-signing-usage)
+- [Installation](https://github.com/TechProber/yubikey-reference/blob/master/installation.md)
+- [Useful GnuPG Commands](https://github.com/TechProber/yubikey-reference/blob/master/useful-gnupg-commands.md)
+- [Setup](https://github.com/TechProber/yubikey-reference/blob/master/setup.md)
+- [Advanced Key Management](https://github.com/TechProber/yubikey-reference/blob/master/advanced-key-management.md)
+- [multiple Keys](https://github.com/TechProber/yubikey-reference/blob/master/multitple-keys.md)
+- [Keybase Usage](https://github.com/TechProber/yubikey-reference/blob/master/keybase-usage.md)
+- [Git Signing Usage](https://github.com/TechProber/yubikey-reference/blob/master/git-signing-usage.md)
 
 ## References
 
@@ -53,103 +52,6 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 - [Yubico OTP key upload](https://upload.yubico.com/)
 - [How to export and import keys with GPG](https://linuxhint.com/export-import-keys-with-gpg/)
 - [GPG: Change email for key in PGP key servers](https://gist.github.com/lovejavaee/4b870ad7fbc735df5245bf996bbd9c11)
-
----
-
-### Dependencies
-
-```bash
-sudo pacman -S opensc usbutils gpg pinentry
-```
-
----
-
-### Management Tools
-
-#### YubiKey Manager
-
-Python library and command-line tool (ykman) for configuring and querying a YubiKey over USB
-
-```bash
-sudo pacman -S yubikey-manager
-sudo systemctl enable pcscd --now
-
-# check key status
-ykman info
-```
-
----
-
-### Authentication Tools
-
-#### Yubico PAM
-
-PAM user authentication with either Yubico OTP or challenge-response
-
-```bash
-sudo pacman -S yubico-pam
-```
-
-#### Yubico PAM-U2F
-
-PAM user authentication with U2F
-
-```bash
-sudo pacman -S pam-u2f
-```
-
-#### libfido2
-
-Client-side U2F support. Enables web browsers to use the U2F protocol for authentication with your YubiKey
-
-```bash
-sudo pacman -S libfido2
-```
-
----
-
-## Useful GnuPG Commands
-
-Some useful commands that you may need
-
-```bash
-# check current card status
-gpg --card-status
-
-# list existing gpg master key
-gpg -K
-
-# list existing gpg master key (detail mode)
-gpg -k
-
-# list the long form of the GPG key-pairs
-gpg --list-secret-keys --keyid-format=long
-
-# prints the GPG pubkey key, in ASCII armor format
-gpg --armor --export <key id>
-
-# delete an existing master private key and all its sub-keys
-gpg --delete-secret-key <key id>
-
-# delete an existing GPG public key
-gpg --delete-key <key id>
-
-# backup your GPG private key
-gpg --export-secret-key --armor <key id> > <dir to save the key>
-
-# fetch stored information from yubikey
-gpg --edit-card
-gpg/card> fetch
-gpg -K
-
-# list all public keys
-gpg --list-secret-keys
-
-# list all private keys
-gpg --list-private-keys
-```
-
----
 
 ## Setup
 
