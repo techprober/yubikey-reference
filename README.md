@@ -26,7 +26,10 @@ Maintainer: [ Kevin Yu (@yqlbu) ](https://github.com/yqlbu)
 
 This repo serves to provide the end-users a way to speed up their Yubikey configuration process
 
-**Notes:** This guide temporarily ONLY supports `Archlinux User`
+**Notes:**
+
+- This guide temporarily ONLY supports `Archlinux User`
+- This guide ONLY works for `Yubikey 5 Series` as it supports `OpenPGP`
 
 ## Table of Contents
 
