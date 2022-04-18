@@ -31,7 +31,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 ## Table of Contents
 
 - [Home Page](https://github.com/TechProber/yubikey-reference)
-- [Add new uid (user id) to and existing key-pair](#add-new-uid-user-id-to-an-existing-key-pari)
+- [Add new uid (user id) to and existing key-pair](#add-new-uid-user-id-to-an-existing-key-pair)
 - [Export and import keys with GPG](#export-and-import-keys-with-gpg)
 
 ## Advanced Key Management
