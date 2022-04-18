@@ -45,9 +45,9 @@ Notes: the following command will pull the target public key (including fingerpr
 gpg --rec-keys <key id>
 ```
 
-## GPG Signing
+## GPG signing
 
-### GPG Signing a recipient's public key
+### GPG sign a recipient's public key
 
 Once you know a public key is used for encryption belongs to the person you think it does, you may sign it with the following command:
 
