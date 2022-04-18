@@ -32,13 +32,13 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 
 - [Home Page](https://github.com/TechProber/yubikey-reference)
 - [Reference](#reference)
-- [Installation](https://github.com/TechProber/yubikey-reference/blob/master/installation.md)
-- [Useful GnuPG Commands](https://github.com/TechProber/yubikey-reference/blob/master/useful-gnupg-commands.md)
-- [Setup](https://github.com/TechProber/yubikey-reference/blob/master/setup.md)
-- [Advanced Key Management](https://github.com/TechProber/yubikey-reference/blob/master/advanced-key-management.md)
-- [multiple Keys](https://github.com/TechProber/yubikey-reference/blob/master/multitple-keys.md)
-- [Keybase Usage](https://github.com/TechProber/yubikey-reference/blob/master/keybase-usage.md)
-- [Git Signing Usage](https://github.com/TechProber/yubikey-reference/blob/master/git-signing-usage.md)
+- [Installation](https://github.com/TechProber/yubikey-reference/blob/master/docs/installation.md)
+- [Useful GnuPG Commands](https://github.com/TechProber/yubikey-reference/blob/master/docs/useful-gnupg-commands.md)
+- [Setup](https://github.com/TechProber/yubikey-reference/blob/master/docs/setup.md)
+- [Advanced Key Management](https://github.com/TechProber/yubikey-reference/blob/master/docs/advanced-key-management.md)
+- [multiple Keys](https://github.com/TechProber/yubikey-reference/blob/master/docs/multitple-keys.md)
+- [Keybase Usage](https://github.com/TechProber/yubikey-reference/blob/master/docs/keybase-usage.md)
+- [Git Signing Usage](https://github.com/TechProber/yubikey-reference/blob/master/docs/git-signing-usage.md)
 
 ## References
 
