@@ -55,4 +55,4 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 
 ## License
 
-[MIT (C) TechProber](https://github.com/yqlbu/TechProber/yubikey-reference/blob/master/LICENSE)
+[MIT (C) TechProber](https://github.com/TechProber/yubikey-reference/blob/master/LICENSE)
