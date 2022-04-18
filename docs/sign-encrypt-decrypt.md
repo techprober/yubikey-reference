@@ -33,6 +33,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 - [Home Page](https://github.com/TechProber/yubikey-reference)
 - [GPG pull public key from keyserver](#gpg-pull-public-key-from-keyserver)
 - [GPG signing](#gpg-signing)
+- [GPG export public key to keyserver](#gpg-export-public-key-to-keyserver)
 - [GPG encryption](#gpg-encrypt)
 - [GPG decryption](#gpg-decrypt)
 
@@ -58,6 +59,21 @@ Before signing the key though, how do you know it can be trusted? If the intende
 
 ```
 gpg --fingerprint <recepient's email>
+```
+
+## GPG export public key to keyserver
+
+```bash
+gpg --send-keys <key id>
+
+# with a specific keyserver
+gpg --key-server 'hkps://pgp.mit.edu' --send-keys <key id>
+```
+
+Refresh existing public keys
+
+```bash
+gpg --keyserver 'hkps://pgp.mit.edu' --refresh-keys
 ```
 
 ## GPG encrypt
