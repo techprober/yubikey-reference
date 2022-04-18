@@ -39,7 +39,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 - [multiple Keys](https://github.com/TechProber/yubikey-reference/blob/master/docs/multitple-keys.md)
 - [Keybase Usage](https://github.com/TechProber/yubikey-reference/blob/master/docs/keybase-usage.md)
 - [Git Signing Usage](https://github.com/TechProber/yubikey-reference/blob/master/docs/git-signing-usage.md)
-- [Sign, Encrypt, and Decrypt](https://github.com/TechProber/yubikey-reference/blob/master/docs/sign-encrypt-decryupt.md)
+- [Sign, Encrypt, and Decrypt](https://github.com/TechProber/yubikey-reference/blob/master/docs/sign-encrypt-decrypt.md)
 
 ## References
 
