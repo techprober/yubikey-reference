@@ -34,13 +34,14 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 - [Dependencies](#Dependencies)
 - [Management Tools](#management-tools)
 - [Authentication Tools](#authentication-tools)
+- [Create Softlinks](#create-softlinks)
 
 ## Installation
 
 ### Dependencies
 
 ```bash
-sudo pacman -S opensc usbutils gpg pinentry
+sudo pacman -Sy opensc usbutils pcsclite ccid gnupg pinentry
 ```
 
 ---
@@ -52,7 +53,7 @@ sudo pacman -S opensc usbutils gpg pinentry
 Python library and command-line tool (ykman) for configuring and querying a YubiKey over USB
 
 ```bash
-sudo pacman -S yubikey-manager
+sudo pacman -Sy yubikey-manager
 sudo systemctl enable pcscd --now
 
 # check key status
@@ -68,7 +69,7 @@ ykman info
 PAM user authentication with either Yubico OTP or challenge-response
 
 ```bash
-sudo pacman -S yubico-pam
+sudo pacman -Sy yubico-pam
 ```
 
 #### Yubico PAM-U2F
@@ -76,7 +77,7 @@ sudo pacman -S yubico-pam
 PAM user authentication with U2F
 
 ```bash
-sudo pacman -S pam-u2f
+sudo pacman -Sy pam-u2f
 ```
 
 #### libfido2
@@ -84,5 +85,15 @@ sudo pacman -S pam-u2f
 Client-side U2F support. Enables web browsers to use the U2F protocol for authentication with your YubiKey
 
 ```bash
-sudo pacman -S libfido2
+sudo pacman -Sy libfido2
+```
+
+---
+
+### Create Softlinks
+
+scdaemon (smartcard daemon for the GnuPG system)
+
+```bash
+sudo ln -s /usr/lib/gnupg/scdaemon /usr/bin/scdaemon
 ```
