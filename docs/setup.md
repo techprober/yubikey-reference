@@ -159,6 +159,7 @@ cat <<EOF >> ~/.gnupg/gpg-agent.conf
 enable-ssh-support
 default-cache-ttl 60
 max-cache-ttl 120
+pinentry-mode loopback
 pinentry-program /usr/bin/pinentry-curses
 EOF
 ```
@@ -176,7 +177,6 @@ I am using fish, so adding the following lines to `~/.config/fish/config.fish` s
 set -e SSH_AUTH_SOCK
 set -U -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 set -x GPG_TTY (tty)
-pinentry-mode loopback
 gpg-connect-agent updatestartuptty /bye >/dev/null
 ```
 
