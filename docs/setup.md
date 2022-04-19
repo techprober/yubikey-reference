@@ -43,7 +43,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 
 ### Basic Card Setup
 
-Change PIN
+#### Change PIN
 
 Reference: https://github.com/drduh/YubiKey-Guide#change-pin
 
@@ -55,7 +55,7 @@ Admin commands are allowed
 gpg/card> passwd
 ```
 
-Turn on KDF Settings
+#### Turn on KDF Settings
 
 Reference: https://github.com/drduh/YubiKey-Guide#enable-kdf
 
@@ -68,7 +68,7 @@ gpg/card> kdf-setup
 gpg/card> list
 ```
 
-Set information
+#### Set information
 
 Reference: https://github.com/drduh/YubiKey-Guide#set-information
 
@@ -88,8 +88,9 @@ gpg/card> list
 ### Setup GPG key with YubiKey
 
 Guide: https://support.yubico.com/hc/en-us/articles/360013790259-Using-Your-YubiKey-with-OpenPGP
+Notes:
 
-Notes: steps including import the GPG private key to your YubiKey
+- The above steps including import the `GPG private key` to your `YubiKey`
 
 You should have a similar output as the following
 
@@ -135,7 +136,7 @@ ssb   rsa4096/99C3D85A28AA5C7C  created: 2022-04-15  expires: never
 
 </details>
 
-Test configuration
+#### Test configuration
 
 ```bash
 echo test | gpg --encrypt --recipient <your login email> | gpg --decrypt
@@ -150,7 +151,7 @@ References:
 - https://github.com/drduh/YubiKey-Guide
 - https://www.linode.com/docs/guides/gpg-key-for-ssh-authentication/
 
-Create gpg-agent configuration
+#### Create gpg-agent configuration
 
 ```bash
 cat <<EOF >> ~/.gnupg/gpg-agent.conf
@@ -162,7 +163,7 @@ pinentry-program /usr/bin/pinentry-curses
 EOF
 ```
 
-Replace agents (\*Important)
+#### Replace agents (\*Important)
 
 Reference: https://github.com/drduh/YubiKey-Guide#replace-agents
 
@@ -178,7 +179,7 @@ set -x GPG_TTY (tty)
 gpgconf --launch gpg-agent
 ```
 
-Configure pinentry to use the correct TTY (\*Important)
+#### Configure pinentry to use the correct TTY (\*Important)
 
 `gpg-connect-agent updatestartuptty /bye >/dev/null` will reset the tty and prompt your to type a pin for authentication to continue the ssh connection
 
