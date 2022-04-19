@@ -41,8 +41,10 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 ### Dependencies
 
 ```bash
-sudo pacman -Sy opensc usbutils pcsclite ccid gnupg pinentry
+sudo pacman -Sy opensc usbutils pcsclite ccid gnupg pinentry libusb-compat
 ```
+
+**Note:** To allow `scdaemon` direct access to USB smartcard readers the optional dependency `libusb-compat` must be installed
 
 ---
 
