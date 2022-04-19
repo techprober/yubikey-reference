@@ -176,10 +176,12 @@ I am using fish, so adding the following lines to `~/.config/fish/config.fish` s
 set -e SSH_AUTH_SOCK
 set -U -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 set -x GPG_TTY (tty)
-gpgconf --launch gpg-agent
+gpg-connect-agent updatestartuptty /bye >/dev/null
 ```
 
 #### Configure pinentry to use the correct TTY (\*Important)
+
+reference: https://wiki.archlinux.org/title/GnuPG#Configure_pinentry_to_use_the_correct_TTY
 
 `gpg-connect-agent updatestartuptty /bye >/dev/null` will reset the tty and prompt your to type a pin for authentication to continue the ssh connection
 
