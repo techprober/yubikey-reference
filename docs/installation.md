@@ -44,7 +44,10 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 sudo pacman -Sy opensc usbutils pcsclite ccid gnupg pinentry libusb-compat
 ```
 
-**Note:** To allow `scdaemon` direct access to USB smartcard readers the optional dependency `libusb-compat` must be installed
+**Note:**
+
+- To allow `scdaemon` direct access to USB smartcard readers the optional dependency `libusb-compat` must be installed
+- `pcscd (pcsclite)` is a daemon which handles access to smartcard (SCard API)
 
 ---
 
