@@ -176,16 +176,33 @@ I am using fish, so adding the following lines to `~/.config/fish/config.fish` s
 set -e SSH_AUTH_SOCK
 set -U -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 set -x GPG_TTY (tty)
+pinentry-mode loopback
 gpg-connect-agent updatestartuptty /bye >/dev/null
 ```
 
 #### Configure pinentry to use the correct TTY (\*Important)
 
-reference: https://wiki.archlinux.org/title/GnuPG#Configure_pinentry_to_use_the_correct_TTY
+Reference: https://wiki.archlinux.org/title/GnuPG#Configure_pinentry_to_use_the_correct_TTY
 
 `gpg-connect-agent updatestartuptty /bye >/dev/null` will reset the tty and prompt your to type a pin for authentication to continue the ssh connection
 
-Relaunch your shell, and enjoy!
+```bash
+#~/.gnupg/gpg.conf
+
+gpg-connect-agent updatestartuptty /bye >/dev/null
+```
+
+#### Unattended passphrase (\*Important)
+
+Reference: https://wiki.archlinux.org/title/GnuPG#Unattended_passphrase
+
+Starting with GnuPG 2.1.0 the use of gpg-agent and pinentry is required, which may break backwards compatibility for passphrases piped in from STDIN using the --passphrase-fd 0 commandline option
+
+```bash
+#~/.gnupg/gpg.conf
+
+pinentry-mode loopback
+```
 
 ---
 
