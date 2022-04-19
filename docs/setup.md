@@ -162,7 +162,7 @@ pinentry-program /usr/bin/pinentry-curses
 EOF
 ```
 
-Replace agents (Important)
+Replace agents (\*Important)
 
 Reference: https://github.com/drduh/YubiKey-Guide#replace-agents
 
@@ -177,6 +177,10 @@ set -U -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 set -x GPG_TTY (tty)
 gpgconf --launch gpg-agent
 ```
+
+Configure pinentry to use the correct TTY (\*Important)
+
+`gpg-connect-agent updatestartuptty /bye >/dev/null` will reset the tty and prompt your to type a pin for authentication to continue the ssh connection
 
 Relaunch your shell, and enjoy!
 
