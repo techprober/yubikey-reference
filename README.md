@@ -46,6 +46,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 
 ## References
 
+- [GnuPG Archlinux Wiki](https://wiki.archlinux.org/title/GnuPG)
 - [YubiKey Archlinux Wiki](https://wiki.archlinux.org/title/YubiKey)
 - [YubiKey-Guide](https://github.com/drduh/YubiKey-Guide)
 - [Using Your YubiKey with OpenPGP](https://support.yubico.com/hc/en-us/articles/360013790259-Using-Your-YubiKey-with-OpenPGP)
