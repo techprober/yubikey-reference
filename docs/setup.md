@@ -159,7 +159,7 @@ cat <<EOF >> ~/.gnupg/gpg-agent.conf
 enable-ssh-support
 default-cache-ttl 60
 max-cache-ttl 120
-pinentry-mode loopback
+allow-loopback-pinentry
 pinentry-program /usr/bin/pinentry-curses
 EOF
 ```
@@ -199,9 +199,9 @@ Reference: https://wiki.archlinux.org/title/GnuPG#Unattended_passphrase
 Starting with GnuPG 2.1.0 the use of gpg-agent and pinentry is required, which may break backwards compatibility for passphrases piped in from STDIN using the --passphrase-fd 0 commandline option
 
 ```bash
-#~/.gnupg/gpg.conf
+#~/.gnupg/gpg-agent.conf
 
-pinentry-mode loopback
+allow-loopback-pinentry
 ```
 
 ---
