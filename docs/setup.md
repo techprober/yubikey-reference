@@ -159,7 +159,7 @@ cat <<EOF >> ~/.gnupg/gpg-agent.conf
 enable-ssh-support
 default-cache-ttl 60
 max-cache-ttl 120
-allow-loopback-pinentry
+pinentry-mode loopback
 pinentry-program /usr/bin/pinentry-curses
 EOF
 ```
@@ -201,7 +201,7 @@ Starting with GnuPG 2.1.0 the use of gpg-agent and pinentry is required, which m
 ```bash
 #~/.gnupg/gpg-agent.conf
 
-allow-loopback-pinentry
+pinentry-mode loopback
 ```
 
 ---
