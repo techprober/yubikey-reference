@@ -36,6 +36,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 - [SSH Configuration](ssh-configuration)
 - [Verify key](#verify-key)
 - [Install PGP-Yubikey to remote servers](#install-pgp-yubikey-to-remote-servers)
+- [Remove SSH Key from GPG Agent](#remove-ssh-key-from-gpg-agent)
 
 ---
 
@@ -227,3 +228,28 @@ $ ssh-add -L | grep "cardno:" > ~/.ssh/id_rsa_yubikey.pub
 Use `ansible playbook` to install the `id_rsa_yubikey.pub` to remote servers
 
 Please find details at https://github.com/TechProber/cloud-estate/discussions/100
+
+---
+
+### Remove SSH Key from GPG Agent
+
+Notes: `ssh -d` is broken with gpg's agent. Use the following workaround the remove the key instead:
+
+Run the `gpg-connect-agent` command from the commandline to connect to the agent. Then, from the prompts there, enter this command to list the ssh keys
+
+```
+KEYINFO --ssh-list --ssh-fpr
+```
+
+You should see something like:
+
+```
+S KEYINFO 3365433C34421CC53B52C9A82169FD2328CF610B D - - - P df:a2:36:8d:ad:88:b3:cc:00:96:10:d4:c9:2c:e0:df - S
+OK
+```
+
+Now, to remove the from the agent:
+
+```bash
+DELETE_KEY 3365433C34421CC53B52C9A82169FD2328CF610B
+```
