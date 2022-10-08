@@ -102,3 +102,15 @@ scdaemon (smartcard daemon for the GnuPG system)
 ```bash
 sudo ln -s /usr/lib/gnupg/scdaemon /usr/bin/scdaemon
 ```
+
+---
+
+### Configure scdaemon
+
+```bash
+# ~/.gnupg/scdaemon.conf
+debug-level basic
+log-file /var/log/scdaemon.log
+reader-port Yubico Yubi
+```
+
