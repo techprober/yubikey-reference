@@ -37,6 +37,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 - [Verify key](#verify-key)
 - [Install PGP-Yubikey to remote servers](#install-pgp-yubikey-to-remote-servers)
 - [Remove SSH Key from GPG Agent](#remove-ssh-key-from-gpg-agent)
+- [Restart scdaemon](#restart-scdaemon)
 
 ---
 
@@ -253,3 +254,32 @@ Now, to remove the from the agent:
 ```bash
 DELETE_KEY 3365433C34421CC53B52C9A82169FD2328CF610B
 ```
+
+---
+
+### Restart scdaemon
+
+Reference: https://man.archlinux.org/man/scdaemon.1.en
+
+By default, the scdaemon will not be restarted automatically, so you need to have a script with cron settings to reset the gpg-agent auth window(session). To do so, follow the guide:
+
+```bash
+# /usr/local/bin/restart-scdaemon
+
+#!/bin/bash
+
+gpgconf --reload scdaemon
+```
+
+Add to crontab
+
+```bash
+sudo pacman -Sy cronie
+
+# /etc/crontab
+
+# run every 20 minutes to restart scdaemon
+*/20 * * * * kev /usr/local/bin/restart-scdaemon
+```
+
+With the above setup, the gpg-agent will reset its auth window(session) every 20 minutes.
