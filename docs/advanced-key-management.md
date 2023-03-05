@@ -77,8 +77,7 @@ cat gpg.key
 gpg --import <key location>
 
 # verify results
-gpg --list-secret-keys
-gpg --list-private-keys
+gpg --list-secret-keys --with-keygrip
 ```
 
 ---
