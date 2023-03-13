@@ -41,7 +41,11 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 ### Dependencies
 
 ```bash
+# archlinux
 sudo pacman -Sy opensc usbutils pcsclite ccid gnupg pinentry libusb-compat
+
+# fedora
+sudo pacman -Sy opensc usbutils pcsc-lite ccid gnupg pinentry
 ```
 
 **Note:**
@@ -58,7 +62,13 @@ sudo pacman -Sy opensc usbutils pcsclite ccid gnupg pinentry libusb-compat
 Python library and command-line tool (ykman) for configuring and querying a YubiKey over USB
 
 ```bash
+# archlinux
 sudo pacman -Sy yubikey-manager
+
+# fedora
+sudo dnf install 
+sudo dnf install yubikey-manager.noarch yubikey-manager-qt.x86_64
+
 sudo systemctl enable pcscd --now
 
 # check key status
