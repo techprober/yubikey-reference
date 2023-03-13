@@ -66,8 +66,10 @@ Python library and command-line tool (ykman) for configuring and querying a Yubi
 sudo pacman -Sy yubikey-manager
 
 # fedora
-sudo dnf install 
-sudo dnf install yubikey-manager.noarch yubikey-manager-qt.x86_64
+sudo dnf install yubikey-manager.noarch
+
+# fedora gui client
+sudo dnf install yubikey-manager-qt.x86_64 yubioath-desktop.x86_64
 
 sudo systemctl enable pcscd --now
 
