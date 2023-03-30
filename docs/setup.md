@@ -187,10 +187,28 @@ Reference: https://wiki.archlinux.org/title/GnuPG#Configure_pinentry_to_use_the_
 
 `gpg-connect-agent updatestartuptty /bye >/dev/null` will reset the tty and prompt your to type a pin for authentication to continue the ssh connection
 
-```bash
-#~/.gnupg/gpg.conf
+Reload GPG Agent to use tty section
 
-gpg-connect-agent updatestartuptty /bye >/dev/null
+```bash
+# $HOME/.gnupg/gpg-agent.conf
+...
+pinentry-program /usr/bin/pinentry-curses
+
+gpg-connect-agent reloadagent /bye
+```
+
+#### Change to GUI Pinentry (Optional)
+
+Reference: https://stackoverflow.com/a/66209785
+
+```bash
+# install pinentry-gtk2
+sudo pacman -S pinentry-gtk-2
+# configure gpg-agent
+# $HOME/.gnupg/gpg-agent.conf
+pinentry-program /usr/bin/pinentry-gtk-2
+# reload gpg-agent
+gpg-connect-agent reloadagent /bye
 ```
 
 #### Unattended passphrase (\*Important)
