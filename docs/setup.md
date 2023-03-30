@@ -223,7 +223,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC4YpotphfZittW6FZDI0phTUra708NiCay08aK3Nm3
 Save gpg-yubikey to `~/.ssh/id_rsa_yubikey.pub`
 
 ```bash
-$ ssh-add -L | grep "cardno:" > ~/.ssh/id_rsa_yubikey.pub
+ssh-add -L | grep "cardno:" > ~/.ssh/id_rsa_yubikey.pub
 ```
 
 Use `ansible playbook` to install the `id_rsa_yubikey.pub` to remote servers
