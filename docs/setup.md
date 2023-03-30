@@ -234,7 +234,7 @@ Please find details at https://github.com/TechProber/cloud-estate/discussions/10
 
 ### Remove SSH Key from GPG Agent
 
-Notes: `ssh -d` is broken with gpg's agent. Use the following workaround the remove the key instead:
+> **Note** `ssh -d` is broken with gpg's agent. Use the following workaround the remove the key instead:
 
 Run the `gpg-connect-agent` command from the commandline to connect to the agent. Then, from the prompts there, enter this command to list the ssh keys
 
@@ -253,6 +253,16 @@ Now, to remove the from the agent:
 
 ```bash
 DELETE_KEY 3365433C34421CC53B52C9A82169FD2328CF610B
+```
+
+---
+
+### Restart GPG Agent
+
+In some cases, you might need to restart the GPG agent. To do so, use the following command:
+
+```bash
+gpg-connect-agent reloadagent /bye
 ```
 
 ---
