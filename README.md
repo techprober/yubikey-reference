@@ -28,7 +28,6 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 
 **Notes:**
 
-- This guide temporarily ONLY supports `Archlinux User`
 - This guide ONLY works for `Yubikey 5 Series` as it supports `OpenPGP`
 
 ## Table of Contents
