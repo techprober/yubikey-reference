@@ -26,8 +26,6 @@ Maintainer: [ Kevin Yu (@yqlbu) ](https://github.com/yqlbu)
 
 This repo serves to provide the end-users a way to speed up their Yubikey configuration process
 
-**Notes:** This guide temporarily ONLY supports `Archlinux User`
-
 ## Table of Contents
 
 - [Home Page](https://github.com/TechProber/yubikey-reference)
@@ -125,4 +123,3 @@ debug-level basic
 log-file /var/log/scdaemon.log
 reader-port Yubico Yubi
 ```
-
