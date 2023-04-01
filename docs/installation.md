@@ -40,10 +40,10 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 
 ```bash
 # archlinux
-sudo pacman -Sy opensc usbutils pcsclite ccid gnupg pinentry libusb-compat
+sudo pacman -S opensc usbutils pcsclite ccid gnupg pinentry libusb-compat
 
 # fedora
-sudo pacman -Sy opensc usbutils pcsc-lite ccid gnupg pinentry
+sudo pacman -S opensc usbutils pcsc-lite ccid gnupg pinentry
 ```
 
 **Note:**
@@ -61,7 +61,7 @@ Python library and command-line tool (ykman) for configuring and querying a Yubi
 
 ```bash
 # archlinux
-sudo pacman -Sy yubikey-manager
+sudo pacman -S yubikey-manager
 
 # fedora
 sudo dnf install yubikey-manager.noarch
@@ -84,7 +84,7 @@ ykman info
 PAM user authentication with either Yubico OTP or challenge-response
 
 ```bash
-sudo pacman -Sy yubico-pam
+sudo pacman -S yubico-pam
 ```
 
 #### Yubico PAM-U2F
@@ -92,7 +92,7 @@ sudo pacman -Sy yubico-pam
 PAM user authentication with U2F
 
 ```bash
-sudo pacman -Sy pam-u2f
+sudo pacman -S pam-u2f
 ```
 
 #### libfido2
@@ -100,7 +100,7 @@ sudo pacman -Sy pam-u2f
 Client-side U2F support. Enables web browsers to use the U2F protocol for authentication with your YubiKey
 
 ```bash
-sudo pacman -Sy libfido2
+sudo pacman -S libfido2
 ```
 
 ---
