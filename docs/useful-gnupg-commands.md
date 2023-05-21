@@ -85,7 +85,7 @@ gpg --delete-key <key id>
 gpg --export-secret-key --armor <key id> > <dir to save the key>
 
 # backup PGP public key
-gpg --export-key --armor <key id> > <dir to save the key>
+gpg --export --armor <key id> > <dir to save the key>
 ```
 
 ### Fetch stored information from yubikey
