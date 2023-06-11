@@ -85,7 +85,7 @@ gpg --list-secret-keys --with-keygrip
 Notes: the wfollowing command will pull the target public key (including fingerprint) from keyserver
 
 ```bash
-gpg --rec-keys <key id>
+gpg --recv-keys <key id>
 ```
 
 ---
