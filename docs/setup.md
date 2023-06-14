@@ -300,7 +300,7 @@ gpgconf --reload scdaemon
 Add to crontab
 
 ```bash
-sudo pacman -Sy cronie
+sudo pacman -S cronie
 
 # /etc/crontab
 
