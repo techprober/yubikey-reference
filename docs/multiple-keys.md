@@ -64,11 +64,12 @@ Reference: https://github.com/drduh/YubiKey-Guide#switching-between-two-or-more-
 gpg-connect-agent "scd serialno" "learn --force" /bye
 ```
 
-Notes:
+> **Note**:
+> - GPG will then scan your first Yubikey for GPG keys and recreate the stubs to point to the GPG keyID and Yubikey Serial number of this first Yubikey
+> - To return to using the second Yubikey just repeat (insert other Yubikey and re-run command).
+> - Obviously this command is not easy to remember so it is recommended to either create a script or a shell alias to make this more user friendly.
 
-- GPG will then scan your first Yubikey for GPG keys and recreate the stubs to point to the GPG keyID and Yubikey Serial number of this first Yubikey
-- To return to using the second Yubikey just repeat (insert other Yubikey and re-run command).
-- Obviously this command is not easy to remember so it is recommended to either create a script or a shell alias to make this more user friendly.
+Also, follow this [article](https://security.stackexchange.com/questions/181551/create-backup-yubikey-with-identical-pgp-keys#191441) to understand why such operation is critical
 
 ---
 
@@ -101,11 +102,15 @@ gpg -k
 
 ### Import the master key to the new YubiKey
 
+> **Note**: the private key `must` have no fingerprint associated with it.
+
 ```bash
 gpg --edit-key <key id>
 ```
 
-Follow the procedures in https://support.yubico.com/hc/en-us/articles/360013790259-Using-Your-YubiKey-with-OpenPGP
+Follow the procedures in <https://support.yubico.com/hc/en-us/articles/360013790259-Using-Your-YubiKey-with-OpenPGP>
+
+Or follow <https://chipsenkbeil.com/posts/applying-gpg-and-yubikey-part-6-setting-up-yubikeys>
 
 ---
 
