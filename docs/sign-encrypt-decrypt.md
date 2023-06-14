@@ -176,7 +176,7 @@ gpg --encrypt --sign -r <key id> --armor message.txt
 
 ### GPG file decryption with private key
 
-The GPGJ encrypted file can now ONLY be `decrypted` by the holder of the `private key`. To GPG decrypt the file with the private key, run the following command:
+The GPG encrypted file can now ONLY be `decrypted` by the holder of the `private key`. To GPG decrypt the file with the private key, run the following command:
 
 ```bash
 gpg --decrypt message.txt.gpg
