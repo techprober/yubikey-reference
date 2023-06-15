@@ -62,6 +62,8 @@ Reference: https://github.com/drduh/YubiKey-Guide#switching-between-two-or-more-
 ```bash
 # kill existing gpg agent
 gpgconf --kill gpg-agent
+# reload agent
+gpg-connect-agent reloadagent /bye
 # insert the first Yubikey (which has a different serial number) and run the following command
 gpg-connect-agent "scd serialno" "learn --force" /bye
 ```
