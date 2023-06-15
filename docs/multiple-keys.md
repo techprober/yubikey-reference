@@ -60,7 +60,9 @@ gpg --export-secret-key --armor <key id> > ~/.local/creds/GPG_key.backup
 Reference: https://github.com/drduh/YubiKey-Guide#switching-between-two-or-more-yubikeys
 
 ```bash
-# Insert the first Yubikey (which has a different serial number) and run the following command
+# kill existing gpg agent
+gpgconf --kill gpg-agent
+# insert the first Yubikey (which has a different serial number) and run the following command
 gpg-connect-agent "scd serialno" "learn --force" /bye
 ```
 
