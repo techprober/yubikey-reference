@@ -44,6 +44,8 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 
 To setup yubikey on another host after fresh installation, follow the steps below
 
+Reference: <https://github.com/drduh/YubiKey-Guide#multiple-hosts>
+
 ### Backup existing master key
 
 ```bash
