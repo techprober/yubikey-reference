@@ -119,10 +119,10 @@ sudo ln -s /usr/lib/gnupg/scdaemon /usr/bin/scdaemon
 
 ```bash
 # ~/.gnupg/scdaemon.conf
+log-file /var/log/scdaemon.log
 debug-level guru
 debug-ccid
-disable-ccid
 debug-all
-log-file /var/log/scdaemon.log
+disable-ccid
 reader-port Yubico Yubi
 ```
