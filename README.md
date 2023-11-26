@@ -42,6 +42,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 
 ## References
 
+- [Yubikey Memos](https://github.com/susumuota/yubikey-setup)
 - [GnuPG Archlinux Wiki](https://wiki.archlinux.org/title/GnuPG)
 - [YubiKey Archlinux Wiki](https://wiki.archlinux.org/title/YubiKey)
 - [YubiKey-Guide](https://github.com/drduh/YubiKey-Guide)
