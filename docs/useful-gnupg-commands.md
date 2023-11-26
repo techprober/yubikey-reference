@@ -29,7 +29,19 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 ## Table of Contents
 
 - [Home Page](https://github.com/TechProber/yubikey-reference)
-- [Useful GnuPG Commands](#useful-gnupg-commands)
+<!-- vim-markdown-toc GFM -->
+
+* [Useful GnuPG Commands](#useful-gnupg-commands)
+  * [Check current card status](#check-current-card-status)
+  * [List existing gpg master key](#list-existing-gpg-master-key)
+  * [List GPG key-pairs in different form](#list-gpg-key-pairs-in-different-form)
+  * [Print the GPG public key, in ASCII (base64) format](#print-the-gpg-public-key-in-ascii-base64-format)
+  * [Delete an existing keys](#delete-an-existing-keys)
+  * [Backup PGP key](#backup-pgp-key)
+  * [Fetch stored information from yubikey](#fetch-stored-information-from-yubikey)
+  * [List all keys](#list-all-keys)
+
+<!-- vim-markdown-toc -->
 
 ## Useful GnuPG Commands
 

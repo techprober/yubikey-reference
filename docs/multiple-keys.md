@@ -29,13 +29,18 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 ## Table of Contents
 
 - [Home Page](https://github.com/TechProber/yubikey-reference)
-- [Backup existing master key](#backup-existing-master-key)
-- [Switch between two or more Yubikeys](#switch-between-two-or-more-yubikeys)
-- [Delete the original key](#delete-the-original-key)
-- [Import the master key from backup](#import-the-master-key-from-backup)
-- [Import the master key to the new YubiKey](#import-the-master-key-to-the-new-yubikey)
-- [Trust the imported key](#trust-the-imported-key)
-- [Verify the result](#verify-the-result)
+<!-- vim-markdown-toc GFM -->
+
+* [Multiple Keys](#multiple-keys)
+  * [Backup existing master key](#backup-existing-master-key)
+  * [Switch between two or more Yubikeys](#switch-between-two-or-more-yubikeys)
+  * [Delete the original key](#delete-the-original-key)
+  * [Import the master key from backup](#import-the-master-key-from-backup)
+  * [Import the master key to the new YubiKey](#import-the-master-key-to-the-new-yubikey)
+  * [Trust the imported key](#trust-the-imported-key)
+  * [Verify the result](#verify-the-result)
+
+<!-- vim-markdown-toc -->
 
 ## Multiple Keys
 
@@ -69,6 +74,7 @@ gpg-connect-agent "scd serialno" "learn --force" /bye
 ```
 
 > **Note**:
+>
 > - GPG will then scan your first Yubikey for GPG keys and recreate the stubs to point to the GPG keyID and Yubikey Serial number of this first Yubikey
 > - To return to using the second Yubikey just repeat (insert other Yubikey and re-run command).
 > - Obviously this command is not easy to remember so it is recommended to either create a script or a shell alias to make this more user friendly.

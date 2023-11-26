@@ -29,6 +29,11 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 ## Table of Contents
 
 - [Home Page](https://github.com/TechProber/yubikey-reference)
+<!-- vim-markdown-toc GFM -->
+
+* [Git Signing Usage](#git-signing-usage)
+
+<!-- vim-markdown-toc -->
 
 ## Git Signing Usage
 

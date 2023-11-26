@@ -29,13 +29,28 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 ## Table of Contents
 
 - [Home Page](https://github.com/TechProber/yubikey-reference)
-- [Basic Card Setup](#basic-card-setup)
-- [Setup GPG key with YubiKey](#setup-gpg-key-with-yubikey)
-- [SSH Configuration](ssh-configuration)
-- [Verify key](#verify-key)
-- [Install PGP-Yubikey to remote servers](#install-pgp-yubikey-to-remote-servers)
-- [Remove SSH Key from GPG Agent](#remove-ssh-key-from-gpg-agent)
-- [Restart scdaemon](#restart-scdaemon)
+<!-- vim-markdown-toc GFM -->
+
+* [Setup](#setup)
+  * [Basic Card Setup](#basic-card-setup)
+    * [Change PIN](#change-pin)
+    * [Turn on KDF Settings](#turn-on-kdf-settings)
+    * [Set information](#set-information)
+  * [Setup GPG key with YubiKey](#setup-gpg-key-with-yubikey)
+    * [Test configuration](#test-configuration)
+  * [SSH Configuration](#ssh-configuration)
+    * [Create gpg-agent configuration](#create-gpg-agent-configuration)
+    * [Replace agents (\*Important)](#replace-agents-important)
+    * [Configure pinentry to use the correct TTY (\*Important)](#configure-pinentry-to-use-the-correct-tty-important)
+    * [Change to GUI Pinentry (Optional)](#change-to-gui-pinentry-optional)
+    * [Unattended passphrase (\*Important)](#unattended-passphrase-important)
+  * [Verify key](#verify-key)
+  * [Install PGP-Yubikey to remote servers](#install-pgp-yubikey-to-remote-servers)
+  * [Remove SSH Key from GPG Agent](#remove-ssh-key-from-gpg-agent)
+  * [Restart GPG Agent](#restart-gpg-agent)
+  * [Restart scdaemon](#restart-scdaemon)
+
+<!-- vim-markdown-toc -->
 
 ---
 

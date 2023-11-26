@@ -29,12 +29,17 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 ## Table of Contents
 
 - [Home Page](https://github.com/TechProber/yubikey-reference)
-- [Install keybase cli](#install-keybase-cli)
-- [Login to keybase](#login-to-keybase)
-- [Import GPG Key-Pair (including the encrypted private key)](#import-gpg-key-pair-including-the-encrypted-private-key)
-- [Purge all GPG keys from keybase keyring](#purge-all-gpg-keys-from-keybase-keyring)
-- [Export PGP key-pair from keybase](#export-pgp-key-pair-from-keybase)
-- [Update Key-Pair to Keybase](#update-key-pair-to-keybase)
+<!-- vim-markdown-toc GFM -->
+
+* [Keybase Usage](#keybase-usage)
+  * [Install keybase cli](#install-keybase-cli)
+  * [Login to keybase](#login-to-keybase)
+  * [Import GPG Key-Pair (including the encrypted private key)](#import-gpg-key-pair-including-the-encrypted-private-key)
+  * [Purge all GPG keys from keybase keyring](#purge-all-gpg-keys-from-keybase-keyring)
+  * [Export PGP Key-Pair from Keybase](#export-pgp-key-pair-from-keybase)
+  * [Update Key-Pair to Keybase](#update-key-pair-to-keybase)
+
+<!-- vim-markdown-toc -->
 
 ## Keybase Usage
 

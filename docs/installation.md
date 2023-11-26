@@ -29,10 +29,20 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 ## Table of Contents
 
 - [Home Page](https://github.com/TechProber/yubikey-reference)
-- [Dependencies](#Dependencies)
-- [Management Tools](#management-tools)
-- [Authentication Tools](#authentication-tools)
-- [Create Softlinks](#create-softlinks)
+<!-- vim-markdown-toc GFM -->
+
+* [Installation](#installation)
+  * [Dependencies](#dependencies)
+  * [Management Tools](#management-tools)
+    * [YubiKey Manager](#yubikey-manager)
+  * [Authentication Tools](#authentication-tools)
+    * [Yubico PAM](#yubico-pam)
+    * [Yubico PAM-U2F](#yubico-pam-u2f)
+    * [libfido2](#libfido2)
+  * [Create Softlinks](#create-softlinks)
+  * [Configure scdaemon](#configure-scdaemon)
+
+<!-- vim-markdown-toc -->
 
 ## Installation
 

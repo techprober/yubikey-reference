@@ -29,13 +29,23 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 ## Table of Contents
 
 - [Home Page](https://github.com/TechProber/yubikey-reference)
-- [GPG pull public key from keyserver](#gpg-pull-public-key-from-keyserver)
-- [GPG signing](#gpg-signing)
-- [GPG export public key to keyserver](#gpg-export-public-key-to-keyserver)
-- [GPG encryption](#gpg-encrypt)
-- [GPG decryption](#gpg-decrypt)
 
 ## GPG pull public key from keyserver
+
+<!-- vim-markdown-toc GFM -->
+
+* [GPG signing](#gpg-signing)
+  * [GPG sign a recipient's public key](#gpg-sign-a-recipients-public-key)
+* [GPG export public key to keyserver](#gpg-export-public-key-to-keyserver)
+* [GPG encrypt](#gpg-encrypt)
+  * [GPG trust a recipient's public key](#gpg-trust-a-recipients-public-key)
+  * [GPG encrypt text string with public key](#gpg-encrypt-text-string-with-public-key)
+  * [GPG encrypt files with public key](#gpg-encrypt-files-with-public-key)
+  * [GPG encrypt text string with public key and signing](#gpg-encrypt-text-string-with-public-key-and-signing)
+* [GPG Decryption](#gpg-decryption)
+  * [GPG file decryption with private key](#gpg-file-decryption-with-private-key)
+
+<!-- vim-markdown-toc -->
 
 Notes: the following command will pull the target public key (including fingerprint) from keyserver
 
