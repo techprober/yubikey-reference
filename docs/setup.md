@@ -279,8 +279,12 @@ DELETE_KEY 3365433C34421CC53B52C9A82169FD2328CF610B
 In some cases, you might need to restart the GPG agent. To do so, use the following command:
 
 ```bash
-pkill gpg-agent
+# kill existing gpg agent
+gpgconf --kill gpg-agent
+# reload agent
 gpg-connect-agent reloadagent /bye
+# reconnect agent with the input key
+gpg-connect-agent "scd serialno" "learn --force" /bye
 ```
 
 ---
