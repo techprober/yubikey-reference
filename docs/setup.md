@@ -49,6 +49,8 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
   * [Remove SSH Key from GPG Agent](#remove-ssh-key-from-gpg-agent)
   * [Restart GPG Agent](#restart-gpg-agent)
   * [Restart scdaemon](#restart-scdaemon)
+  * [Add to crontab](#add-to-crontab)
+  * [Check current gpgconf](#check-current-gpgconf)
 
 <!-- vim-markdown-toc -->
 
@@ -318,7 +320,7 @@ By default, the scdaemon will not be restarted automatically, so you need to hav
 gpgconf --reload scdaemon
 ```
 
-Add to crontab
+### Add to crontab
 
 ```bash
 sudo pacman -S cronie
@@ -330,3 +332,18 @@ sudo pacman -S cronie
 ```
 
 With the above setup, the gpg-agent will reset its auth window(session) every 20 minutes.
+
+### Check current gpgconf
+
+```bash
+gpgconf
+
+gpg:OpenPGP:/usr/bin/gpg2
+gpgsm:S/MIME:/usr/bin/gpgsm
+keyboxd:Public Keys:/usr/libexec/keyboxd
+gpg-agent:Private Keys:/usr/bin/gpg-agent
+scdaemon:Smartcards:/usr/libexec/scdaemon
+tpm2daemon:TPM:/usr/libexec/tpm2daemon
+dirmngr:Network:/usr/bin/dirmngr
+pinentry:Passphrase Entry:/usr/bin/pinentry
+```
