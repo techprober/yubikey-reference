@@ -23,22 +23,10 @@ Maintainer: [ Kevin Yu (@yqlbu) ](https://github.com/yqlbu)
 
 This repo serves to provide the end-users a way to speed up their Yubikey configuration process
 
-**Notes:**
+> [!NOTE]
+> This guide ONLY works for `Yubikey 5 Series` as it supports `OpenPGP`
 
-- This guide ONLY works for `Yubikey 5 Series` as it supports `OpenPGP`
-
-## Table of Contents
-
-- [Home Page](https://github.com/TechProber/yubikey-reference)
-- [Reference](#reference)
-- [Installation](./docs/installation.md)
-- [Useful GnuPG Commands](./docs/useful-gnupg-commands.md)
-- [Setup](./docs/setup.md)
-- [Advanced Key Management](./docs/advanced-key-management.md)
-- [multiple Keys](./docs/multiple-keys.md)
-- [Keybase Usage](./docs/keybase-usage.md)
-- [Git Signing Usage](./docs/git-signing-usage.md)
-- [Sign, Encrypt, and Decrypt](./docs/sign-encrypt-decrypt.md)
+Entrypoint: [docs/][https://github.com/techprober/yubikey-reference/tree/master/docs]
 
 ## References
 
