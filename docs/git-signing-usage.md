@@ -38,9 +38,10 @@ Reference: https://gist.github.com/alopresto/b8d940197b4c314e27188a6852198d2d
 Upload your key to Github followed by the [guide](https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/)
 
 ```bash
-# enable signing for every git commit (optional)
-git config --global commit.gpgsign true
-
+# enable signing for every git commit
+git config --global commit.gpgSign true
+# enable signing for tag
+git config --global tag.forceSignAnnotated true
 # reference the keyid that is used for signing
 git config --global user.signingkey <keyid>
 
