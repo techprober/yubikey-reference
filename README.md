@@ -26,7 +26,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 > [!NOTE]
 > This guide ONLY works for `Yubikey 5 Series` as it supports `OpenPGP`
 
-Entrypoint: [docs/][https://github.com/techprober/yubikey-reference/tree/master/docs]
+Entrypoint: [docs/](https://github.com/techprober/yubikey-reference/tree/master/docs)
 
 ## References
 
