@@ -31,17 +31,15 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 - [Home Page](https://github.com/TechProber/yubikey-reference)
 <!-- vim-markdown-toc GFM -->
 
-* [Advanced Key Management](#advanced-key-management)
-  * [Add new uid (user id) to an existing key-pair](#add-new-uid-user-id-to-an-existing-key-pair)
-  * [Export and import keys with GPG](#export-and-import-keys-with-gpg)
-  * [GPG pull public key from keyserver](#gpg-pull-public-key-from-keyserver)
-  * [Export GPG public key to keyserver](#export-gpg-public-key-to-keyserver)
+* [Add new uid (user id) to an existing key-pair](#add-new-uid-user-id-to-an-existing-key-pair)
+* [Export and import keys with GPG](#export-and-import-keys-with-gpg)
+* [GPG pull public key from keyserver](#gpg-pull-public-key-from-keyserver)
+* [Export GPG public key to keyserver](#export-gpg-public-key-to-keyserver)
+* [Add additional email (uid) to the key](#add-additional-email-uid-to-the-key)
 
 <!-- vim-markdown-toc -->
 
-## Advanced Key Management
-
-### Add new uid (user id) to an existing key-pair
+## Add new uid (user id) to an existing key-pair
 
 Reference: https://gist.github.com/lovejavaee/4b870ad7fbc735df5245bf996bbd9c11
 
@@ -58,7 +56,7 @@ gpg> save
 
 ---
 
-### Export and import keys with GPG
+## Export and import keys with GPG
 
 Reference: https://linuxhint.com/export-import-keys-with-gpg/
 
@@ -85,7 +83,7 @@ gpg --list-secret-keys --with-keygrip
 
 ---
 
-### GPG pull public key from keyserver
+## GPG pull public key from keyserver
 
 Notes: the following command will pull the target public key (including fingerprint) from keyserver
 
@@ -95,7 +93,7 @@ gpg --recv-keys <key id>
 
 ---
 
-### Export GPG public key to keyserver
+## Export GPG public key to keyserver
 
 ```bash
 gpg --send-keys <key id>
@@ -103,6 +101,8 @@ gpg --send-keys <key id>
 # with a specific keyserver (without verifying identity)
 gpg --keyserver 'hkps://keys.openpgp.org' --send-keys <key id>
 ```
+
+Reference: https://keys.openpgp.org/about/usage
 
 To configure GnuPG to use `keys.openpgp.org` as keyserver, add this line to your `gpg.conf` file:
 
@@ -125,3 +125,13 @@ gpg --keyserver 'hkps://keys.openpgp.org' --refresh-keys
 Check the public key from keyserver
 
 https://keys.openpgp.org/search
+
+---
+
+## Add additional email (uid) to the key
+
+```bash
+gpg --edit-key <key id>
+gpg> adduid
+gpg> save
+```
