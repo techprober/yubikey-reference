@@ -87,7 +87,7 @@ gpg --list-secret-keys --with-keygrip
 
 ### GPG pull public key from keyserver
 
-Notes: the wfollowing command will pull the target public key (including fingerprint) from keyserver
+Notes: the following command will pull the target public key (including fingerprint) from keyserver
 
 ```bash
 gpg --recv-keys <key id>
@@ -101,11 +101,15 @@ gpg --recv-keys <key id>
 gpg --send-keys <key id>
 
 # with a specific keyserver
-gpg --key-server 'hkps://pgp.mit.edu' --send-keys <key id>
+gpg --keyserver 'hkps://keys.openpgp.org' --send-keys <key id>
 ```
 
 Refresh existing public keys
 
 ```bash
-gpg --keyserver 'hkps://pgp.mit.edu' --refresh-keys
+gpg --keyserver 'hkps://keys.openpgp.org' --refresh-keys
 ```
+
+Check the public key from keyserver
+
+https://keys.openpgp.org/search
