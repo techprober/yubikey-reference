@@ -75,13 +75,13 @@ gpg --fingerprint <recepient's email>
 gpg --send-keys <key id>
 
 # with a specific keyserver
-gpg --key-server 'hkps://pgp.mit.edu' --send-keys <key id>
+gpg --key-server 'hkps://keys.openpgp.org' --send-keys <key id>
 ```
 
 Refresh existing public keys
 
 ```bash
-gpg --keyserver 'hkps://pgp.mit.edu' --refresh-keys
+gpg --keyserver 'hkps://keys.openpgp.org' --refresh-keys
 ```
 
 ## GPG encrypt
