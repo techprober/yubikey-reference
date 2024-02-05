@@ -49,14 +49,6 @@ gpg/card> fetch
 gpg -k
 ```
 
-### fetch stored information from yubikey
-
-```bash
-gpg --edit-card
-gpg/card> fetch
-gpg -k
-```
-
 ### Trust the imported key
 
 ```bash
