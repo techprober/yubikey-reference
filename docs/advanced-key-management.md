@@ -100,8 +100,20 @@ gpg --recv-keys <key id>
 ```bash
 gpg --send-keys <key id>
 
-# with a specific keyserver
+# with a specific keyserver (without verifying identity)
 gpg --keyserver 'hkps://keys.openpgp.org' --send-keys <key id>
+```
+
+To configure GnuPG to use `keys.openpgp.org` as keyserver, add this line to your `gpg.conf` file:
+
+```sh
+keyserver hkps://keys.openpgp.org
+```
+
+Uploading your key, which outputs a direct link to the verification page (identity verification required, recommended)
+
+```bash
+gpg --export your_address@example.net | curl -T - https://keys.openpgp.org
 ```
 
 Refresh existing public keys
