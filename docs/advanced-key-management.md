@@ -28,7 +28,6 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 
 ## Table of Contents
 
-- [Home Page](https://github.com/TechProber/yubikey-reference)
 <!-- vim-markdown-toc GFM -->
 
 * [Add new uid (user id) to an existing key-pair](#add-new-uid-user-id-to-an-existing-key-pair)
@@ -36,6 +35,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 * [GPG pull public key from keyserver](#gpg-pull-public-key-from-keyserver)
 * [Export GPG public key to keyserver](#export-gpg-public-key-to-keyserver)
 * [Add additional email (uid) to the key](#add-additional-email-uid-to-the-key)
+* [Remove subkey](#remove-subkey)
 
 <!-- vim-markdown-toc -->
 
@@ -134,4 +134,15 @@ https://keys.openpgp.org/search
 gpg --edit-key <key id>
 gpg> adduid
 gpg> save
+```
+
+## Remove subkey
+
+Reference: https://superuser.com/questions/1132263/how-to-delete-a-subkey-on-linux-in-gnupg
+
+```bash
+gpg --expert --edit-key <keyid>
+# select the key index
+gpg > key 1
+gpg > delkey
 ```
