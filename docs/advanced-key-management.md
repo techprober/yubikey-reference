@@ -36,6 +36,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
 * [Export GPG public key to keyserver](#export-gpg-public-key-to-keyserver)
 * [Add additional email (uid) to the key](#add-additional-email-uid-to-the-key)
 * [Remove subkey](#remove-subkey)
+* [Update PGP key on key servers](#update-pgp-key-on-key-servers)
 
 <!-- vim-markdown-toc -->
 
@@ -145,4 +146,16 @@ gpg --expert --edit-key <keyid>
 # select the key index
 gpg > key 1
 gpg > delkey
+```
+
+## Update PGP key on key servers
+
+Reference: https://askubuntu.com/questions/481813/how-to-update-pgp-key-on-key-servers
+
+```bash
+gpg --edit-key <keyid>
+gpg> <operation>
+gpg> save
+# upload the modified key to the key servers
+gpg --keyserver 'hkps://keys.openpgp.org' --send-keys <keyid>
 ```
