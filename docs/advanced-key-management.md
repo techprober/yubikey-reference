@@ -125,7 +125,7 @@ gpg --keyserver 'hkps://keys.openpgp.org' --refresh-keys
 
 Check the public key from keyserver
 
-https://keys.openpgp.org/search
+https://keys.openpgp.org/
 
 ---
 
