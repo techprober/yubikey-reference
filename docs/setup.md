@@ -173,6 +173,7 @@ References:
 ```bash
 cat <<EOF >> ~/.gnupg/gpg-agent.conf
 # https://github.com/drduh/config/blob/master/gpg-agent.conf
+# https://www.gnupg.org/documentation/manuals/gnupg/Agent-Options.html
 enable-ssh-support
 default-cache-ttl 60
 max-cache-ttl 120
