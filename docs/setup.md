@@ -38,7 +38,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
   * [SSH Configuration](#ssh-configuration)
     * [Create gpg-agent configuration](#create-gpg-agent-configuration)
     * [Replace agents (\*Important)](#replace-agents-important)
-    * [Configure pinentry to use the correct TTY (\*Important)](#configure-pinentry-to-use-the-correct-tty-important)
+    * [Configure pinentry to use the correct TTY (Important)](#configure-pinentry-to-use-the-correct-tty-important)
     * [Change to GUI Pinentry (Optional)](#change-to-gui-pinentry-optional)
     * [Unattended passphrase (\*Important)](#unattended-passphrase-important)
   * [Verify key](#verify-key)
@@ -46,6 +46,7 @@ This repo serves to provide the end-users a way to speed up their Yubikey config
   * [Remove SSH Key from GPG Agent](#remove-ssh-key-from-gpg-agent)
   * [Restart GPG Agent](#restart-gpg-agent)
   * [Restart scdaemon](#restart-scdaemon)
+  * [Unlock card](#unlock-card)
   * [Add to crontab](#add-to-crontab)
   * [Check current gpgconf](#check-current-gpgconf)
 
@@ -189,13 +190,32 @@ You may find the configuration that fits your current shell environment from the
 I am using fish, so adding the following lines to `~/.config/fish/config.fish` should be good to go.
 
 ```fish
+# References: https://github.com/drduh/YubiKey-Guide/issues/89#issuecomment-1501886324
 # Ensure that GPG Agent is used as the SSH agent
-set -U -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+set -x KEY_SERIAL (gpg-connect-agent 'scd serialno' /bye | head -n 1 | cut -f3 -d ' ')
+set -x GNUPGHOME "$HOME/.gnupg"
+set -x PINENTRY_USER_DATA "USE_CURSES=1"
+set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 set -x GPG_TTY (tty)
-gpg-connect-agent updatestartuptty /bye >/dev/null
+gpgconf --launch gpg-agent
+echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2>&1
 ```
 
-#### Configure pinentry to use the correct TTY (\*Important)
+for `zsh` or `bash`, the equivalent setup will be as the following:
+
+```bash
+# References: https://github.com/drduh/YubiKey-Guide/issues/89#issuecomment-1501886324
+# Ensure that GPG Agent is used as the SSH agent
+export KEY_SERIAL=$(gpg-connect-agent 'scd serialno' /bye | head -n 1 | cut -f3 -d ' ')
+export GNUPGHOME="$HOME/.gnupg"
+export PINENTRY_USER_DATA="USE_CURSES=1"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+export GPG_TTY=$(tty)
+gpgconf --launch gpg-agent
+echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2>&1
+```
+
+#### Configure pinentry to use the correct TTY (Important)
 
 Reference: https://wiki.archlinux.org/title/GnuPG#Configure_pinentry_to_use_the_correct_TTY
 
@@ -312,11 +332,29 @@ Reference: https://man.archlinux.org/man/scdaemon.1.en
 By default, the scdaemon will not be restarted automatically, so you need to have a script with cron settings to reset the gpg-agent auth window(session). To do so, follow the guide:
 
 ```bash
-# /usr/local/bin/restart-scdaemon
-
-#!/bin/bash
-
 gpgconf --reload scdaemon
+```
+
+### Unlock card
+
+Reference: https://github.com/drduh/YubiKey-Guide/issues/89
+
+You might encounter issue that inserting the Yubikey and attempting to ssh does not trigger gpg-agent to prompt me for a pin. Even with export GPG_TTY=$(tty) in your shells startup files, `gpg` still does not know where to display the pin-entry. There is a workaround to trigger an unlock-card action with the following commands:
+
+```bash
+export SERIAL=$(gpg-connect-agent 'scd serialno' /bye | head -n 1 | cut -f3 -d' ')
+gpg-connect-agent "scd checkpin $SERIAL" /bye
+```
+
+With the above workarounds, the ssh functionality will work again afterward.
+
+You may also add the following alias to easily trigger the `unlock-card` action:
+
+```bash
+# zsh
+alias unlock-card="gpg-connect-agent 'scd checkpin $SERIAL' /bye"
+# fish
+abbr unlock-card "gpg-connect-agent 'scd checkpin $SERIAL' /bye"
 ```
 
 ### Add to crontab
@@ -327,7 +365,7 @@ sudo pacman -S cronie
 # /etc/crontab
 
 # run every 20 minutes to restart scdaemon
-*/20 * * * * kev /usr/local/bin/restart-scdaemon
+*/20 * * * * kev /usr/bin/gpgconf --reload scdaemon
 ```
 
 With the above setup, the gpg-agent will reset its auth window(session) every 20 minutes.
@@ -337,6 +375,7 @@ With the above setup, the gpg-agent will reset its auth window(session) every 20
 ```bash
 gpgconf
 
+# outputs
 gpg:OpenPGP:/usr/bin/gpg2
 gpgsm:S/MIME:/usr/bin/gpgsm
 keyboxd:Public Keys:/usr/libexec/keyboxd
