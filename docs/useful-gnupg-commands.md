@@ -122,6 +122,8 @@ gpg --list-secret-keys
 
 ### Export SSH public key
 
+Ref: https://medium.com/@chrispisano/ssh-authentication-with-gpg-411676781647
+
 ```bash
 gpg --export-ssh-key <key id> > $HOME/.ssh/id_rsa.pub
 ```
