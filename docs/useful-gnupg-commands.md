@@ -119,3 +119,9 @@ gpg -k
 # list all private keys
 gpg --list-secret-keys
 ```
+
+### Export SSH public key
+
+```bash
+gpg --export-ssh-key <key id> > $HOME/.ssh/id_rsa.pub
+```
