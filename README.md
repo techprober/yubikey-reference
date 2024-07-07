@@ -19,7 +19,7 @@
 
 CopyRight 2022 TechProber. All rights reserved.
 
-Maintainer: [ Kevin Yu (@yqlbu) ](https://github.com/yqlbu)
+Maintainer: [ Kev (@piyoki) ](https://github.com/piyoki)
 
 This repo serves to provide the end-users a way to speed up their Yubikey configuration process
 
